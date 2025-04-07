@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: unet-backend
+    ports:
+      - "8000:8000"
+    restart: always
+    volumes:
+      - ./backend:/app
+    environment:
+      - PYTHONUNBUFFERED=1
+    networks:
+      - unet-network
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: unet-frontend
+    ports:
+      - "3000:3000"
+    restart: always
+    volumes:
+      - ./frontend:/app  # Live code mounting
+      - /app/node_modules  # Avoid node_modules conflicts
+    depends_on:
+      - backend
+    networks:
+      - unet-network
+
+networks:
+  unet-network:
+    driver: bridge

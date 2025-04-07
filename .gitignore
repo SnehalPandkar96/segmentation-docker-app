@@ -1,0 +1,21 @@
+# Node
+node_modules
+build
+
+# Python
+__pycache__/
+*.pyc
+env/
+venv/
+*.pth
+
+# Docker
+*.log
+
+# OS
+.DS_Store
+
+# IDEs
+.vscode/
+.idea/
+
