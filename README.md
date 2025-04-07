@@ -15,6 +15,11 @@ segmentation-app/ │-- backend/ # FastAPI backend using U-Net model │-- front
 
 ---
 
+## Class Information
+- The class selected for this assignment is **A172**
+
+---
+
 ## Getting Started with Docker
 
 ### Prerequisites
@@ -23,4 +28,6 @@ segmentation-app/ │-- backend/ # FastAPI backend using U-Net model │-- front
 
 ### Build and Run the Application
 ```bash
-docker-compose up -d --build
+docker-compose up -d --build 
+
+
